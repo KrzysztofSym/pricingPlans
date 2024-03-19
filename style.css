@@ -128,23 +128,6 @@ img {
 
 /*===== PROJECT CSS =====*/
 
-/* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    min-width: 400px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    animation: scaleUp 1s ease-in-out;
-    transform-origin: center center;
-} */
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
  html {
@@ -157,7 +140,6 @@ img {
  body {
 	 background-color: #211f23;
 	 background-repeat: no-repeat;
-	 /* filter-gradient: #53455b, #201e22, horizontal; */
 	 background-image: radial-gradient(circle at top, rgba(83, 69, 91, 1) 0, rgba(32, 30, 34, 1) 70%);
 	 color: #fff;
 	 font-family: 'Lato', sans-serif;
@@ -212,7 +194,7 @@ img {
 }
  @media screen and (min-width: 1120px) {
 	 .card {
-		 width: 20%;
+		 width: 25%;
 	}
 	 .card:nth-child(odd), .card:nth-child(3n+1) {
 		 clear: none;
@@ -289,9 +271,7 @@ img {
 	 left: 50%;
      margin: 0 auto;
      transform: translateX(-50%);
-	 /* margin-left: -60px; */
 	 text-decoration: none;
-	 /* width: 120px; */
 }
  .uppercase, .button, h2 {
 	 text-transform: uppercase;
@@ -315,18 +295,14 @@ input[type=radio] {
     overflow: hidden;
 }
 
-/* h3 {
-    overflow: hidden;
-} */
 .price {
     content: '';
     display: inline-block;
     transform: translate(0);
     transition: .3s;
     position: relative;
-    width: 50px;
+    width: 45px;
     height: 1.5rem;
-    /* background-color:#33cbb8; */
 }
 
 .price::after {
@@ -336,7 +312,6 @@ input[type=radio] {
     top: 0;
     width: 100%;
     transition: .3s;
-    /* transform: tr anslate(0, -20px); */
     opacity: 0;
 }
 
@@ -362,6 +337,18 @@ input[type=radio] {
     opacity: 0;
 }
 
+.small:after {
+    content: '/month';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    transition: .3s;
+    transform: translate(0, 20px);
+    opacity: 0;
+}
+
 .price::before {
     content: '299';
     position: absolute;
@@ -374,6 +361,11 @@ input[type=radio] {
 }
 
 .card.annually .price:after{
+    transform: translate(0, -20px);
+    opacity: 0;
+}
+
+.card.annually .small:after{
     transform: translate(0, 20px);
     opacity: 0;
 }
@@ -393,6 +385,13 @@ input[type=radio] {
     transform: translate(0);
     opacity: 1;
 }
+
+.card .small::after {
+    transform: translate(0);
+    opacity: 1;
+}
+
+
 
 input[type=radio]:before {
     content: '';
